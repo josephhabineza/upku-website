@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products List</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+        body {
+            font-family:'Times New Roman', Times, serif;
+            background-color: white;
+            margin: 0;
+            padding: 0px;
+         
+        }
+        
+        .media {
+            background-color:#547971;
+            color: white;
+            padding: 10px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 3%;
+        }
+        .logo img{
+            
+            height: 80px;
+            widows: 85px;
+        }
+        .navbar {
+            background-color: white;
+            color:black;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 7vh;
+            border-bottom:1px;
+            border-bottom-color:black;
+            border-bottom-style: outset;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 17px;
+        }
+        
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar li {
+            margin-left: 20px;
+        }
+        .navbar a {
+            color:black;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #fe6601;
+        }
+         .language-options {
+  display: inline-block;
+  padding: 1px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+.language-options ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 3px;
+}
+
+.language-options li {
+  display: inline-block;
+  padding: 2px 1px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.language-options li:hover {
+  border: 1px solid #ccc;
+  background-color: #e0e0e0;
+}
+
+.language-options img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+        /*********************************************************end of nav bar menu section******************************/
+
+        /***********************************************************************navbar**************************************************/
+
+        .header h1{
+            font-size: 35px;
+            color:black;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            font-style:normal;
+            font-weight: bold;
+
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            height: auto;
+        }
+        .filter {
+            flex: 1 1 20px;
+            background: #fff;
+            margin-right: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+          
+        }
+        .products {
+            flex: 2 2 70%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .product {
+            background: #fff;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .product img{
+            height: 200px;
+            width: 200px;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+           
+        }
+        .filter input[type="checkbox"]:hover + label {
+            color: #007BFF;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .product {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .product {
+                flex: 1 1 100%;
+            }
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .filter h3 {
+            margin-bottom: 10px;
+        }
+        .filter input {
+            margin-right: 5px;
+        }
+        .checkout-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #9b1f37;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            height: 10px;
+            width: 70px;
+            overflow: hidden;
+        }
+        .checkout-btn:hover {
+            background-color: darkgrey;
+          
+        }
+        .homeproductsbutton{
+
+height: 5vh;
+width: 35vh;
+border-radius:25px;
+color:white;
+background-color:#9b1f37; 
+font-size: 16px;
+border:none;
+}
+.homeproductsbutton:hover{
+background-color:darkgrey;
+color: white;
+}
+    
+        
+         /***************************************************************FOOTER BAR**********************************/
+         .footer {
+            background-color: black;
+            color: white;
+            text-align: justify;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .ft {
+            margin-left: 40px;
+            color: white;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0px;
+            color: white;
+        }
+        .footer li {
+            display: block;
+            margin: 20px;
+            color: white;
+        }
+        
+        .ft a {
+            color:white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .ft a:hover {
+            color: #007BFF;
+        }
+        
+        .message{
+            padding: 25px;
+        }
+        .name{
+            width: 300px;
+            margin-bottom: 5px;
+           border-radius: 5px;
+            padding: 7px;
+            border-style: hidden;
+        }
+        .cta-button
+        {
+            
+            background-color: #9b1f37;
+            border-radius: 50px;
+            padding: 10px 15px;
+            border-style: hidden;
+            color: white;
+            font-size: 18px;
+            font-family: sans-serif;
+        }
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        .copy{
+
+            height: 40px;
+            width: 198vh;
+            background-color: black;
+            color: white;
+            font-size: 16px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+            text-align: center;
+        }
+        /*************************************************NFOOTERBAR********************************/
+    </style>
+</head>
+<body>
+    <div class="media">
+        <div class="social-media-icons">
+            <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-icon linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="navbar">
+        <div class="logo"><img src="img/logo2.png"></div>
+        
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+             <li><a href="catalog.html">catalog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
+        <div class="search-container">
+            <form>
+                <input type="text" name="search" placeholder="Search..">
+              </form>
+        </div>
+        <div class="language-options">   
+  <ul>
+    
+    <li><span> </span>
+ 
+       <image src="img/france.png"></image>
+    
+    </li>
+    <li>
+    <image src="img/kingdom.png"></image>
+      
+    </li>
+      <li>
+    <img src="img/china.png">
+      
+    </li>
+    </ul>
+</div>
+    </div>
+    <!--------------------------------------------------------------------end nav bar menu section -------------------------->
+<div class="header"><h1 >Product list</h1></div>
+<div class="container">
+    <div class="filter">
+        <h2>Filters</h2>
+        
+        <h3>Categories</h3>
+        <label><input type="checkbox" checked> Obstacle Equipment</label><br>
+        <label><input type="checkbox"> Training Gear</label><br>
+        <label><input type="checkbox"> Safety Equipment</label><br>
+        <label><input type="checkbox"> Accessories</label><br>
+
+        <h3>Age Group</h3>
+        <label><input type="checkbox"> Kids</label><br>
+        <label><input type="checkbox"> Teens</label><br>
+        <label><input type="checkbox"> Adults</label><br>
+
+        <h3>Price Range</h3>
+        <label><input type="checkbox"> Under $50</label><br>
+        <label><input type="checkbox"> $50 - $100</label><br>
+        <label><input type="checkbox"> $100 - $200</label><br>
+        <label><input type="checkbox"> Over $200</label><br>
+
+        <h3>Customer Ratings</h3>
+        <label><input type="checkbox"> ★★★★★ (5 Stars)</label><br>
+        <label><input type="checkbox"> ★★★★☆ (4 Stars)</label><br>
+        <label><input type="checkbox"> ★★★☆☆ (3 Stars)</label><br>
+        <label><input type="checkbox"> ★★☆☆☆ (2 Stars)</label><br>
+        <label><input type="checkbox"> ★☆☆☆☆ (1 Star)</label><br>
+
+        <h3>Color Options</h3>
+        <label><input type="checkbox"> Red</label><br>
+        <label><input type="checkbox"> Blue</label><br>
+        <label><input type="checkbox"> Green</label><br>
+        <label><input type="checkbox"> Black</label><br>
+        <label><input type="checkbox"> Custom Colors</label><br>
+
+        <h3>Size</h3>
+        <label><input type="checkbox"> Small</label><br>
+        <label><input type="checkbox"> Medium</label><br>
+        <label><input type="checkbox"> Large</label><br>
+        <label><input type="checkbox"> Extra Large</label><br>
+    </div>
+
+    <div class="products">
+        <div class="product"><img src="img/p1.jpg">
+            <h3>floor-mounted aluminum truss course </h3>
+            <p>Price: $75</p>
+            <p>Rating: ★★★★☆</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+          
+        </div>
+        <div class="product">
+            <img src="img/p2.jpg">
+            <h3>truss course frame</h3>
+            <p>Price: $199</p>
+            <p>Rating: ★★★★★</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="img/p3.jpg">
+            <h3>Hanging Obstacle Course</h3>
+            <p>Price: $150</p>
+            <p>Rating: ★★★★☆</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="img/p4.jpg">
+            <h3>Half-ring flywheel</h3>
+            <p>Price: $30</p>
+            <p>Rating: ★★★☆☆</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="img/p5.jpg">
+            <h3>Climbing net</h3>
+            <p>Price: $120</p>
+            <p>Rating: ★★★★★</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="img/p6.jpg">
+            <h3>Cheese Board</h3>
+            <p>Price: $90</p>
+            <p>Rating: ★★★★☆</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="img/p7.jpg">
+            <h3>Maze climbing B</h3>
+            <p>Price: $90</p>
+            <p>Rating: ★★★★☆</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="img/p8.jpg">
+            <h3>Maze climbing B PE Board</h3>
+            <p>Price: $90</p>
+            <p>Rating: ★★★★☆</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="img/p7.jpg">
+            <h3>Maze climbing B</h3>
+            <p>Price: $90</p>
+            <p>Rating: ★★★★☆</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="img/p8.jpg">
+            <h3>Maze climbing B PE Board</h3>
+            <p>Price: $90</p>
+            <p>Rating: ★★★★☆</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="img/p8.jpg">
+            <h3>Maze climbing B PE Board</h3>
+            <p>Price: $90</p>
+            <p>Rating: ★★★★☆</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="img/p9.jpg">
+            <h3>Aerial Fitness Packages</h3>
+            <p>Price: $90</p>
+            <p>Rating: ★★★★☆</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        
+        <div class="product">
+            <img src="PRODUCT/PRO (4).jpg">
+            <h3>Assembly Connecting Frame</h3>
+            <p>Price: $30</p>
+            <p>Rating: ★★★☆☆</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="PRODUCT/PRO (5).jpg">
+            <h3>Floor-Mounted single-layer course frame </h3>
+            <p>Price: $120</p>
+            <p>Rating: ★★★★★</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="PRODUCT/PRO (6).jpg">
+            <h3>Froor mounted double layer steel structure course</h3>
+            <p>Price: $90</p>
+            <p>Rating: ★★★★☆</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="PRODUCT/PRO (8).jpg">
+            <h3>Short T-nut</h3>
+            <p>Price: $30</p>
+            <p>Rating: ★★★☆☆</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="PRODUCT/PRO (9).jpg">
+            <h3>Long T-nut Imported Plywood</h3>
+            <p>Price: $120</p>
+            <p>Rating: ★★★★★</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+        <div class="product">
+            <img src="PRODUCT/PRO (10).jpg">
+            <h3>Curved Wall</h3>
+            <p>Price: $90</p>
+            <p>Rating: ★★★★☆</p>
+            <a href="index.html"><button class="homeproductsbutton">Check Out</button></a>
+        </div>
+    </div>
+
+</div>
+    
+    <!-------------------------------------FOOTER-->
+
+    <div class="footer">
+        <div class="ft">
+            <h2>Menu</h2>
+            <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+             <li><a href="catalog.html">catalog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="ft">
+            <h2>Contact Us</h2>
+            <p>Email: info@ninjabase.com</p>
+            <p>Tell: +8619870035632</p>
+            <p>WhatsApp: +8619870035632</p>
+            <p>WeChat: +8619870035632</p>
+            <p>Address: 12th Changan Road, Yanta Dist., Xi'an, China</p>
+        </div>
+        <div class="ft">
+            <div class="message">
+                <h2>Leave a Message</h2>
+                <form action="https://formsubmit.co/habinezaandrew033@gmail.com" method="POST">
+                  <div>   <input class="name" type="text" placeholder="Your Name" required></div>
+                    <div>  <input class="name" type="email" placeholder="Your Email" required></div>
+                    <div>  <textarea class="name" placeholder="Your Message" required></textarea></div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+       
+    </div>
+    <div class="copy">© 2024 UPKU All right reserved.
+
+    </div>
+    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">WhatsApp Us</a>
+
+<!----------------------------------------FOOTER----------------------------------------------------------->
+<script>
+    const slides = document.querySelector('.slides');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const totalSlides = document.querySelectorAll('.slide').length;
+        currentIndex = (index + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    
+     const languageOptions = document.querySelector('.language-options');
+languageOptions.addEventListener('click', (event) => {
+if (event.target.tagName === 'LI') {
+const selectedLanguage = event.target.querySelector('span').textContent;
+// Implement language change logic here, e.g., using localStorage or sessionStorage
+console.log('Selected language:', selectedLanguage);
+}
+});
+
+    </script>
+
+</body>
+</html>

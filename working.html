@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird-Themed Product Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .sparrow-slider {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .eagle-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .owl-slide {
+            min-width: 20%; /* 5 products per slide */
+            box-sizing: border-box;
+            padding: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 0 5px;
+            text-align: center;
+        }
+        .owl-slide img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .finch-wrapper {
+            display: none; /* Hide all slide containers initially */
+        }
+        .active-finch {
+            display: flex; /* Show the active slide container */
+        }
+        .nav-bird {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 123, 255, 0.8);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1;
+            width: 40px;
+            height: 40px;
+        }
+        .prev-bird {
+            left: 10px;
+        }
+        .next-bird {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sparrow-slider">
+    <!-- Slide 1 -->
+    <div class="finch-wrapper active-finch">
+        <div class="eagle-slides">
+            <div class="owl-slide">
+                <img src="https://example.com/image1.jpg" alt="Product 1">
+                <h2>The Spine 2.0</h2>
+                <p>Constructed entirely out of steel, this obstacle integrates seamlessly into any ninja gym.</p>
+                <p>Price: $849.00</p>
+            </div>
+            <div class="owl-slide">
+                <img src="https://example.com/image2.jpg" alt="Product 2">
+                <h2>Salmon Ladder</h2>
+                <p>A must-have for testing upper body strength with multiple peg options.</p>
+                <p>Price: $2,599.00</p>
+            </div>
+            <div class="owl-slide">
+                <img src="https://example.com/image3.jpg" alt="Product 3">
+                <h2>Ninja Pegboard</h2>
+                <p>Endless configurations for indoor use with various lengths available.</p>
+                <p>Price: $959.00</p>
+            </div>
+            <div class="owl-slide">
+                <img src="https://example.com/image4.jpg" alt="Product 4">
+                <h2>Teeter Totter</h2>
+                <p>An essential balance obstacle for any ninja gym, fully adjustable for challenge levels.</p>
+                <p>Price: $319.00</p>
+            </div>
+            <div class="owl-slide">
+                <img src="https://example.com/image5.jpg" alt="Product 5">
+                <h2>Pop Up Parkour Package</h2>
+                <p>Quickly assembled for versatile setups, perfect for parkour training.</p>
+                <p>Price: $1,889.00</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="finch-wrapper">
+        <div class="eagle-slides">
+            <div class="owl-slide">
+                <img src="https://example.com/image6.jpg" alt="Product 6">
+                <h2>Balance Beam</h2>
+                <p>Perfect for improving balance and coordination skills.</p>
+                <p>Price: $450.00</p>
+            </div>
+            <div class="owl-slide">
+                <img src="https://example.com/image7.jpg" alt="Product 7">
+                <h2>Cliff Board</h2>
+                <p>A challenging obstacle for advanced ninjas to master their skills.</p>
+                <p>Price: $700.00</p>
+            </div>
+            <div class="owl-slide">
+                <img src="https://example.com/image8.jpg" alt="Product 8">
+                <h2>Rope Swing</h2>
+                <p>Add excitement to your training with this dynamic obstacle.</p>
+                <p>Price: $1,200.00</p>
+            </div>
+            <div class="owl-slide">
+                <img src="https://example.com/image9.jpg" alt="Product 9">
+                <h2>Warrior Wall</h2>
+                <p>Test your agility and strength with this vertical challenge.</p>
+                <p>Price: $2,300.00</p>
+            </div>
+            <div class="owl-slide">
+                <img src="https://example.com/image10.jpg" alt="Product 10">
+                <h2>Adjustable Lache Board</h2>
+                <p>Customize lache distances for tailored training sessions.</p>
+                <p>Price: $149.00</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="nav-bird prev-bird" onclick="navigateBird(-1)">❮</button>
+    <button class="nav-bird next-bird" onclick="navigateBird(1)">❯</button>
+</div>
+
+<script>
+    let currentBirdIndex = 0;
+    const finchWrappers = document.querySelectorAll('.finch-wrapper');
+
+    function showBirdSlides() {
+        finchWrappers.forEach((wrapper, index) => {
+            wrapper.classList.toggle('active-finch', index === currentBirdIndex);
+        });
+    }
+
+    function navigateBird(direction) {
+        currentBirdIndex = (currentBirdIndex + direction + finchWrappers.length) % finchWrappers.length; // Loop through slides
+        showBirdSlides();
+    }
+
+    showBirdSlides(); // Initialize the slider
+</script>
+
+</body>
+</html>

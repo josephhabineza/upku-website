@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family:'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0px;
+            background-color: #f4f4f4;
+            color: #333;
+         
+           
+        }
+        /**********************************************nav****************************************/
+        .meme {
+           background-color:#547971;
+            height: 20px;
+            width: 100%;
+        }
+        .logo img{
+            
+            height: 80px;
+            widows: 85px;
+        }
+        .navbar {
+            background-color: white;
+            color:black;
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 9vh;
+            border-bottom:1px;
+            border-bottom-color:black;
+            border-bottom-style: outset;
+            width: 100%;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 17px;
+        }
+        .search-container {
+            display: flex;
+        }
+        .search-container input {
+            padding: 11px;
+            border: 1px solid #000000;
+            border-radius: 10px 0 0 10px;
+            width: 250px;
+            font-size: 14px;
+        }
+        .search-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            background-color: #9b1f37;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .search-container button:hover {
+            background-color: #0e3629;
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            margin-left: 0px;
+        }
+        .navbar li {
+            margin-left: 15px;
+        }
+        .navbar a {
+            color:black;
+            text-decoration: none;
+            font-size: 23px;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #9b1f37;
+        }
+         .language-options {
+  display: inline-block;
+  padding: 1px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+.language-options ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 3px;
+}
+
+.language-options li {
+  display: inline-block;
+  padding: 2px 1px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.language-options li:hover {
+  border: 1px solid white;
+  background-color: white;
+}
+
+.language-options img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+
+}
+        /*********************************************************end of nav bar menu section******************************/
+        header {
+            text-align: center;
+            
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #070707;
+        }
+        .container {
+            max-width: 250vh;
+            margin: auto;
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .container h9{
+            font-size: 70px;
+            font-weight:bold;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+        .companyinfo{
+
+            display: flex;
+            background-color: #ffffff;
+            height: 50vh;
+            align-items: center;
+            justify-content: center;
+
+        }
+        
+
+
+        
+       .fill input,textarea {
+            display: flex;
+            flex-direction: column;
+            background-color:#f7f7f7;
+            font-size: 12px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            width: 50vh;
+          
+        }
+         
+        input, textarea {
+            margin-bottom: 7px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+            max-width: 50vh;
+        }
+        input:focus, textarea:focus {
+            border-color: #4CAF50;
+        }
+        .fill
+
+    {
+        align-items: center;
+        justify-content:center;
+        text-align: center;
+        text-indent: 20px;
+        line-height: 1.5;
+        margin-left: 40px;
+        background-color: #f7f7f7;
+        height: 40vh;
+        width: 70vh;
+        align-items: center;
+        justify-content:center;
+    }
+    .contact-info{
+        align-items: center;
+        justify-content:center;
+        margin-left: 10px;
+        height: 40vh;
+        width: 70vh;
+        background-color:#f7f7f7;
+        margin-bottom: 15px;
+    }
+        button {
+            padding: 10px;
+            background-color:#9b1f37;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            max-width: 25vh;
+            height: 40px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .contact-info, .map, .faq {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 150px;
+            overflow: hidden;
+            margin-left: 10px;
+        }
+        .social-icons a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 24px;
+            
+        }
+        .map{
+
+            overflow: hidden;
+            width: 100%;
+            height: 70vh;
+            background-color: #ffffff;
+        }
+        .map iframe{
+
+            width: 100%;
+            height: 70vh;
+        }
+        .map h2{
+            text-align: center;
+        }
+        .bar {
+            width: 40px;
+            height: 40px;
+
+        }
+        @media (max-width: 900px) {
+            .container {
+                padding: 10px;
+            }
+            button {
+                font-size: 20px;
+            }
+        }
+        
+         /***************************************************************FOOTER BAR**********************************/
+         .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+             width: 100%;
+          
+        }
+        .ft {
+            margin-left: 15%;
+            color: white;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0px;
+            color: white;
+        }
+        .footer li {
+            display: block;
+            margin: 20px;
+            color: white;
+        }
+        
+        .ft a {
+            color:white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .ft a:hover {
+            color: #007BFF;
+        }
+        
+        .message{
+            padding: 15px;
+        }
+        .name{
+            width: 250px;
+            margin-bottom: 5px;
+           border-radius: 5px;
+            padding: 5px;
+            border-style: hidden;
+        }
+        .cta-button
+        {
+            
+            background-color: #9b1f37;
+            border-radius: 50px;
+            padding: 10px 15px;
+            border-style: hidden;
+            color: white;
+            font-size: 18px;
+            font-family: sans-serif;
+        }
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        .copy{
+
+            height: 40px;
+            width: 100%;
+            background-color: black;
+            color: white;
+            font-size: 16px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+            text-align: center;
+        }
+        /*************************************************NFOOTERBAR********************************/
+        /*************************************************NFOOTERBAR********************************/
+    </style>
+</head>
+<body>
+<!--navigation bar--------------------------------------------------------------------------------->
+
+<div class="meme">
+   
+</div>
+<div class="navbar">
+    <div class="logo"><img src="img/logo2.png"></div>
+    
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+         <li><a href="catalog.html">catalog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact us.html">Contact Us</a></li>
+    </ul>
+    <div class="search-container">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+    <div class="language-options">   
+<ul>
+
+<li><span> </span>
+
+   <image src="img/france.png"></image>
+
+</li>
+<li>
+<image src="img/kingdom.png"></image>
+  
+</li>
+  <li>
+<img src="img/china.png">
+  
+</li>
+</ul>
+</div>
+</div>
+<!--------------------------------------------------------------------end nav bar menu section -------------------------->
+<header>
+    <h1>Contact Us</h1>
+</header>
+
+<div class="container">
+    <h9>We're Here To Help 24/7</h9>
+    <p>If you have any questions, feel free to reach out to us. We’d love to hear from you!</p>
+    <div class="companyinfo">
+<div class="fill">
+    <form action="https://formsubmit.co/habinezaandrew033@gmail.com" method="post">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="tel" placeholder="Your Phone (optional)">
+        <textarea type="msg" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+    <div class="contact-info">
+        <h2>Contact Information</h2>
+        <p>Email: info@example.com</p>
+        <p>Phone: +8619870035632</p>
+        <p>whatsapp: +8619870035632</p>
+        <p>whatsapp: +8619870035632</p>
+        <p>Address: xian city changan 123 street</p>
+    </div>
+    </div>
+        <div class="social-icons">
+            <a href="#"><img src="img/instagram.png" class="bar"></a>
+            <a href="#"><img src="img/facebook.png" class="bar"></a>
+            <a href="#"><img src="img/whatsapp.png" class="bar"></a>
+            <a href="#"><img src="img/tik-tok.png" class="bar"></a>
+            <a href="#"><img src="img/twitter.png" class="bar"></a>
+            <a href="#"><img src="img/google.png" class="bar"></a>
+            <a href="#"><img src="img/alibaba.png" class="bar"></a>
+            <a href="#"><img src="img/youtube.png" class="bar"></a>
+            <a href="#"><img src="img/gmail.png" class="bar"></a>
+            <a href="#"><img src="img/linkedin.png" class="bar"></a>
+            
+        </div>
+    
+
+    <div class="map">
+        <h2>Our Location</h2>
+        <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31385.065940220305!2d108.96347636968662!3d34.22432874700011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x366370eedf2a230f%3A0x628932c881781b68!2sYanta%20District%2C%20Xi&#39;An%2C%20Shaanxi%2C%20China!5e0!3m2!1sen!2shk!4v1726196420295!5m2!1sen!2shk"
+             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+    </div>
+
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <p>1. What are your hours of operation?<br>Answer: We are open Monday to Friday, 9 AM - 5 PM.</p>
+        <p>2. How can I track my order?<br>Answer: You will receive an email with tracking information.</p>
+    </div>
+</div>
+<!-------------------------------------FOOTER-->
+<!-------------------------------------FOOTER-->
+
+<div class="footer">
+    <div class="ft">
+        <h2>Menu</h2>
+        <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+         <li><a href="catalog.html">catalog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="ft">
+        <h2>Contact Us</h2>
+        <p>Email: info@ninjabase.com</p>
+        <p>Tell: +8619870035632</p>
+        <p>WhatsApp: +8619870035632</p>
+        <p>WeChat: +8619870035632</p>
+        <p>Address: 12th Changan Road, Yanta Dist., Xi'an, China</p>
+    </div>
+    <div class="ft">
+        <div class="message">
+            <h2>Leave a Message</h2>
+            <form action="https://formsubmit.co/habinezaandrew033@gmail.com" method="POST">
+              <div>   <input class="name" type="text" placeholder="Your Name" required></div>
+                <div>  <input class="name" type="email" placeholder="Your Email" required></div>
+                <div>  <textarea class="name" placeholder="Your Message" required></textarea></div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </div>
+   
+</div>
+<div class="copy">© 2024 UPKU All right reserved.
+
+</div>
+<a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">WhatsApp Us</a>
+
+<!----------------------------------------FOOTER----------------------------------------------------------->
+
+<!----------------------------------------FOOTER----------------------------------------------------------->
+</body>
+</html>

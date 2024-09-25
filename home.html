@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Equipment </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+       
+        html, body {
+            font-family:'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        
+    }  
+        .media {
+            background-color:#547971;
+            color: white;
+            padding: 10px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 2%;
+        }
+        .logo img{
+            
+            height: 80px;
+            width: 140px;
+        }
+        .navbar {
+            background-color: white;
+            color:#075038;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 7vh;
+            border-bottom:1px;
+            border-bottom-color:black;
+            border-bottom-style: outset;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 17px;
+            
+        }
+        
+        search--------------------------------
+
+.containers {
+  height: 100vh;
+  margin-inline: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+
+.search {
+  position: relative;
+  width: 76px;
+  height: 30px;
+  background-color: var(--white-color);
+  box-shadow: 0 4px 24px hsla(222, 68%, 12%, 0.1);
+  border-radius: 4rem;
+  padding: 10px;
+  overflow: hidden;
+  transition: width 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
+}
+.search__input {
+  border: none;
+  outline: none;
+  width: calc(100% - 64px);
+  height: 100%;
+  border-radius: 4rem;
+  padding-left: 14px;
+  font-family: var(--body-font);
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.5s;
+}
+.search__input:-webkit-autofill {
+  box-shadow: 0 0 0 100px var(--white-color) inset;
+}
+.search__button {
+  width: 56px;
+  height: 56px;
+  background-color: var(--dark-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.6s cubic-bezier(0.9, 0, 0.3, 0.9);
+}
+.search__icon, .search__close {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  position: absolute;
+  transition: opacity 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
+}
+.search__close {
+  opacity: 0;
+}
+
+/* Search animated */
+.show-search {
+  width: 100%;
+}
+.show-search .search__input {
+  opacity: 1;
+  pointer-events: initial;
+}
+.show-search .search__button {
+  transform: rotate(90deg);
+}
+.show-search .search__icon {
+  opacity: 0;
+}
+.show-search .search__close {
+  opacity: 1;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .show-search {
+    width: 450px;
+  }
+}
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar li {
+            margin-left: 20px;
+        }
+        .navbar a, button {
+            color:#0e3629;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            color:#335c4e;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: #2c413a;
+            padding: 5px 7px;
+            background-color: inherit;
+            
+        }
+        .navbar a, .dropdown:hover .dropbtn {
+            background-color: #ffffff;
+            color: #2c413a;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 500px;
+            
+            z-index: 1;
+        
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            text-align: left;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+         .language-options {
+  display: inline-block;
+  padding: 1px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+.language-options ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 3px;
+}
+
+.language-options li {
+  display: inline-block;
+  padding: 2px 1px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.language-options li:hover {
+  border: 1px solid #ccc;
+  background-color: #e0e0e0;
+}
+
+.language-options img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+       /*****************************************************************************Nav bar********************************************/ 
+        .hero {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            background-image: url(img/backk.jpg);
+            background-size: cover;
+            background-position: center;
+            
+        }
+        .slides {
+            display: flex;
+            transition: transform 2s ease-out;
+            height: 70vh;
+            width: 70vh;
+           
+            
+        }
+        .slide {
+            min-width: 80%;
+            background-position:center;
+            background-size: cover;
+            align-items: center;
+        }
+        .slide1 { background-image: url('img/uph1.JPG')}
+        .slide2 { background-image: url('img/uph2.JPG')}
+        .slide3 { background-image: url('img/uph3.JPG')}
+        .slide4 { background-image: url('img/uph4.JPG')}
+        .slide5 { background-image: url('img/uph5.JPG')}
+        .slide6 { background-image: url('img/uph6.JPG')}
+        .slide7 { background-image: url('img/uph7.JPG')}
+        .slide8 { background-image: url('img/uph8.JPG')}
+       
+        .content {
+            position: absolute;
+            top: 50%;
+            margin-left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align:left;
+            font-family: sans-serif;
+            font-size: 25px;
+            background-color:rgba(13, 13, 14, 0.329);
+            height: 70vh;
+            width: 200vh;
+           
+           
+        }
+        .contents{
+
+            margin-top: 160px;
+            margin-left: 40%;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color:#9b1f37;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            
+        }
+        .btn a{
+            color: white;
+        }
+        
+        /*design section---------------------------------------------*/
+        .biter {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            margin-top: 50px;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+        }
+        .bites {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            margin-left: 5%;
+            
+        }
+        .bite {
+            min-width: 10%; /* 5 products per slide */
+            box-sizing: border-box;
+            padding: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 0 5px;
+            text-align: center;
+            height: 110%;
+            text-indent: 15px;
+            line-height: 1.5;
+            
+        }
+        .bite img {
+            max-width: 70%;
+            max-height: 50%;
+            border-radius: 8px;
+        }
+        .bite-container {
+            display: none; /* Hide all slide containers initially */
+            width: 95%;
+            
+        }
+        .active {
+            display: flex; /* Show the active slide container */
+        }
+        .button {
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            background-color: rgb(255, 255, 255);
+            color: #9b1f37;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1;
+            width: 40px;
+            height: 10vh;
+            border: none;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+
+    /* 手里的featuredproducts */
+        
+        .midle-menu{
+            background:#0d3a2c;
+            height: 10vh;
+            width: 100%;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            font-size: 25px;
+           
+        }
+        .mile-section{
+            
+            background-color: #0d3a2c;
+            height: 10vh;
+            width: 60vh;
+            margin-left:70vh;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            font-size: 40px;
+        }
+        .section2{
+            
+         height: 10vh;
+         width: 20vh;
+            background-color:#0d3a2c;
+            margin-left: 0px;
+            align-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            color: lightgrey;
+        }
+        .section2:hover{
+            background-color:gainsboro;
+        }
+        .section2 img{
+            
+            height: 15px;
+            width: 15px;
+            align-content: center;
+            align-items: center;
+            margin-left: 7px;
+        }
+        
+        .dis{
+            
+            background-color:rgb(255, 255, 255);
+            width: 80%;
+            height: 75vh;
+            margin-top: 0px;
+            margin-left: 150px;
+            
+        }
+        .pace{
+            
+            background-color:rgb(255, 255, 255);
+            height: 40px;
+            color: rgb(182, 180, 180);
+            text-align: center;
+            font-size: 40px;
+            margin-top: 31px;
+        }
+        .disign{
+            
+            background-image: url(img/section2.png);
+            background-size:cover;
+            background-position: center;
+            height: 70vh;
+            margin-bottom: 0px;
+            transition: 1s ease;
+   
+        }
+        .disign :hover{
+
+            width: auto;
+            height: auto;
+            background-color: #0056b3;
+        }
+        
+        
+        .sis{
+            
+            background-color:white;
+            width: 80%;
+            height: 100vh;
+            margin-top: 0px;
+            margin-left: 150px;
+            
+        }
+        .sace{
+            
+            background-color:white;
+            height: 50px;
+            color: black;
+            text-align: center;
+            font-size: 30px;
+        }
+        .sisign{
+            
+            background-image: url(img/section3.png);
+            background-repeat: no-repeat;
+            background-size:cover;
+            height: 90vh;
+            margin-bottom: 0px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .arrival{
+
+            cursor: pointer;
+            height: 90vh;
+            width: 100%;
+            
+            
+        }
+        .arrival button{
+            cursor: pointer;
+            bottom: 0px;
+            align-items: center;
+            margin-top: 41%;
+            margin-left: 48%;
+            border-radius: 20px;
+            width: 25vh;
+            height: 5vh;
+            background-color:#9b1f37 ;
+            border: none;
+            color: white;
+        }
+        .arrival button:hover{
+
+            background-color: gray;
+            width: 25vh;
+            height: 5vh;
+        }
+        .arrival:hover {
+            background-color:rgba(13, 13, 14, 0.329);
+            color: #0056b3;
+        }
+        @media (max-width: 400px) {
+            .sis {
+                width: calc(100% - 20px); /* One column for small screens */
+            }
+            .sisign{
+            width: calc(100% - 20px);
+            }
+        }
+        /*product........................................................................................... css*/
+        
+      
+        h1 {
+            text-align: center;
+            margin-top:  150px;
+            color: rgb(182, 180, 180);;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 10%;
+            background-color:white;
+            width: 80%
+        }
+
+        .product-card {
+            background: rgb(255, 255, 255);
+            border: 0px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 13px;
+            width: calc(19% - 30px); /* Four columns with spacing */
+            
+            transition: transform 0.2s;
+            overflow: hidden;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image {
+            background-color: aqua;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    
+        .product-title {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+
+        .product-price {
+            color: black;
+            
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .nutton123 {
+               background-color: white;
+               height: 60px;
+               width: 250px;
+               margin-top: 10vh;
+        }
+
+        .nav-button {
+            background: white;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin: 0 5px;
+        }
+
+        .nav-button:hover {
+            background: white;
+        }
+        .nav-button img{
+            height: 50px;
+            width: 50px;
+            margin-left: 20px;
+        }
+
+        .homeproductsbutton{
+
+            height: 4vh;
+            width: 25vh;
+            border-radius: 10px;
+            border: #9b1f37;
+            margin-bottom: 0%;
+            
+        }
+        .homeproductsbutton:hover{
+            background-color: #9b1f37;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            .product-card {
+                width: calc(48% - 20px); /* Two columns for medium screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: calc(100% - 20px); /* One column for small screens */
+            }
+            .homeproductsbutton{
+                width: calc(48% - 20px);
+            }
+        }
+        
+         /*product........................................................................................... css*/
+        
+        
+        /*aho nakuyr*/
+        .morer {
+            width: 800px; /* Set a width for the slider */
+            height: 100%; /* Set a height for the slider */
+            overflow: hidden;
+            position: relative;
+            border-radius: 5px;
+            background-image: url(img/office8.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .mores {
+            display: flex;
+            width: 300%; /* 100% for each image, 3 images = 300% */
+            animation: more 12s infinite; /* Animation duration and infinite loop */
+            justify-content: space-between;
+            align-items: center;
+          
+            
+        }
+
+        .more {
+            width: 50%; /* Each slide takes up 1/3 of the total width */
+            height: 20%;
+            transition: transform 1s ease-in-out;
+            
+        }
+        .more img{
+
+            height: 60vh;
+            width: 100vh;
+            border-radius: 3px;
+            
+        }
+         
+        @keyframes more {
+            0% { transform: translateX(0); }
+            33.333% { transform: translateX(-100%); }
+            66.666% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+        }
+
+/*desing 2 */
+/********************************************************************* event sliding**********************************************************************************  */
+.sparrow-slider {
+            position: relative;
+            max-width: 92%;
+            margin: auto;
+            overflow: hidden;
+         
+        }
+        .eagle-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            margin-left: 60px;
+        }
+        .owl-slide {
+            min-width: 10%; /* 5 products per slide */
+            box-sizing: border-box;
+            padding: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 0 5px;
+            text-align: center;
+            height: 50vh;
+        }
+        .owl-slide img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .finch-wrapper {
+            display: none; /* Hide all slide containers initially */
+            width: 95%;
+        }
+        .active-finch {
+            display: flex; /* Show the active slide container */
+        }
+        .nav-bird {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color:#ffffff;
+            color: #9b1f37;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1;
+            width: 40px;
+            height: 40px;
+        }
+        .prev-bird {
+            left: 10px;
+        }
+        .next-bird {
+            right: 10px;
+        }
+
+/* -----------------------------------------------------------------------------------------event-------------------------------------------------------- */
+
+
+
+        .img {
+            width: 20%;
+            height: auto;
+            object-fit:cover;
+        }
+        
+        
+        
+        .introduction {
+            padding: 30px 10px;
+            text-align: center;
+            color: rgb(182, 180, 180);
+            font-size: 20px;
+           
+        }
+        
+        .describ {
+            display: flex;
+            justify-content: center;
+        }
+        .intro {
+            background-color: white;
+            height: 500px;
+            width: 700px;
+            margin-left: 5px;
+            text-align: left;
+            font-family:sans-serif;
+            text-indent: 16px;
+            line-height: 1.5;
+            overflow: hidden;
+        }
+        .intro button{
+            
+            height: 60px;
+            width: 200px;
+            color: white;
+            background-color:#9b1f37; 
+            margin-top: 30px;
+            font-size: 18px;
+            font-family: sans-serif;
+            border-radius: 60px;
+            border-color: black;
+            border-style: hidden;
+            margin-left: 30px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .intro button:hover{
+            background-color:#f7f7f7;
+            border-color: black;
+            color:#fe6601;
+        }
+        .intro h4{
+            
+            font-size: px;
+            color: #0d3a2c;
+            margin-top: 10px;
+        }
+        .class33 {
+            width: 32%;
+            float: left;
+            text-align: center;
+            padding: 35px;
+            box-sizing: border-box;
+            text-indent: 10px;
+            line-height: 1.5;
+            background-color:#f7f7f7;
+            margin-left: 5px;
+            margin-right: 10px;
+        }
+        .class33 img {
+            width: 65px;
+            height: 80px;
+        }
+        .class33 p{
+            
+            text-align: left;
+        }
+        .Joinmail{
+            
+            height: 50vh;
+            width: 100%;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            font-size: 17px;
+        }
+        .Joinmail form{
+            padding: 10px;
+            border-radius: 17px;
+        }
+        
+        .Joinmail input{
+            padding: 10px;
+            width: 60vh;
+            
+            
+        }
+        .Joinmail button{
+            width: 60vh;
+            padding: 10px;
+            background-color:#9b1f37;
+            border-radius: 80px;
+            border-style: hidden;
+            color: white;
+        }
+        .Joinmail h7{
+            
+            font-size: 35px;
+        }
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: justify;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .ft {
+            margin-left: 40px;
+            color: white;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0px;
+            color: white;
+        }
+        .footer li {
+            display: block;
+            margin: 20px;
+            color: white;
+        }
+        
+        .ft a {
+            color:white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .ft a:hover {
+            color: #007BFF;
+        }
+        
+        .message{
+            padding: 25px;
+        }
+        .name{
+            width: 300px;
+            margin-bottom: 5px;
+           border-radius: 5px;
+            padding: 7px;
+            border-style: hidden;
+        }
+        .cta-button
+        {
+            
+            background-color: #9b1f37;
+            border-radius: 50px;
+            padding: 10px 15px;
+            border-style: hidden;
+            color: white;
+            font-size: 18px;
+            font-family: sans-serif;
+        }
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        .copy{
+
+            height: 40px;
+            width: 198vh;
+            background-color: black;
+            color: white;
+            font-size: 16px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+            .class33 {
+                width: 100%;
+                float: none;
+            }
+        }
+        @media (min-width:768px){
+            
+            .body {
+                flex-direction:row;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <!---------------------------------nav bar -------------------------------menu------------------------>
+    <div class="media">
+       
+    </div>
+    <div class="navbar">
+        <div class="logo"><img src="img/logo2.png"></div>
+       
+        <ul>
+            <li><a href="home.html">Home</a></li>
+
+
+            <li><div class="dropdown">
+                <button class="dropbtn">Products</button>
+                <div class="dropdown-content">
+                    <a href="products.html">All Equipment</a>
+                    <a href="#ninja-obstacles">Ninja Obstacles</a>
+                    <a href="#ninja-holds">Ninja Holds</a>
+                    <a href="#ninja-rigs">Ninja Rigs</a>
+                    <a href="#ninja-packages">Ninja Packages</a>
+                    <a href="#all-equipment">Balance Obstacles</a>
+                    <a href="#ninja-obstacles">hand held Obstacles</a>
+                    <a href="#ninja-holds">swinging Obstacles</a>
+                    <a href="#ninja-rigs">accesories</a>
+                    <a href="#ninja-packages">Ninja Packages</a>
+
+                </div>
+                
+            </div>
+        
+            <li><a href="services.html">Services</a></li>
+             <li><a href="catalog.html">catalog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
+        <!----------------------------------------Search function-->
+        <div class="containers">
+            <form action="products.html" class="search" id="search-bar">
+                <input type="search" placeholder="Type something..." name="q" class="search__input">
+    
+                <div class="search__button" id="search-button">
+                    <i class="ri-search-2-line search__icon"></i>
+                    <i class="ri-close-line search__close"></i>   
+                </div>
+            </form>
+        </div>
+            <!----------------------------------------Search function-->
+        <div class="language-options">   
+  <ul>
+    
+    <li><span> </span>
+ 
+       <image src="img/france.png"></image>
+    
+    </li>
+    <li>
+    <image src="img/kingdom.png"></image>
+      
+    </li>
+      <li>
+    <img src="img/china.png">
+      
+    </li>
+    </ul>
+</div>
+    </div>
+    <!--------------------------------------------------------------------end nav bar-->
+    <div class="hero">
+        <div class="slides">
+            <div class="slide slide1"></div>
+            <div class="slide slide2"></div>
+            <div class="slide slide3"></div>
+            <div class="slide slide4"></div>
+            <div class="slide slide5"></div>
+            <div class="slide slide6"></div>
+            <div class="slide slide7"></div>
+            <div class="slide slide8"></div>
+        </div>
+        <div class="content">
+            <div class="contents">
+            <p>Welcome to our factory</p>
+            <p>UPKU factory equipment co.ltd </co></CO></p>
+            <p>Quality equipment</p>
+            <button class="btn"><a href="products.html">View More</a></button>
+        </div>
+        </div>
+    </div>
+<!-------------------products list----------------------->
+<div class="midle-menu">
+    
+    <div class="mile-section">
+    <div class="section2" >Feartured</div>
+    <div class="section2">Design</div>
+    <div class="section2">New</div>
+    </div>
+</div> 
+<!-----------------------------------------------------------------------------------------------------SLIDE FEAUTURED PRODUCTS------------------->
+<div class="biter">
+    <!-- Slide 1 -->
+    <div class="bite-container active">
+        <div class="bites">
+            <div class="bite">
+                <img src="PRODUCT/PRO (10).jpg" alt="Product 1">
+                <h2>The Spine 2.0</h2>
+                <p>Constructed entirely out of steel, this obstacle integrates seamlessly into any ninja gym.</p>
+                <p>Price: $849.00</p>
+                
+            </div>
+            <div class="bite">
+                <img src="PRODUCT/PRO (102).jpg" alt="Product 2">
+                <h2>Salmon Ladder</h2>
+                <p>A must-have for testing upper body strength with multiple peg options.</p>
+                <p>Price: $2,599.00</p>
+            </div>
+            <div class="bite">
+                <img src="PRODUCT/PRO (103).jpg" alt="Product 3">
+                <h2>Ninja Pegboard</h2>
+                <p>Endless configurations for indoor use with various lengths available.</p>
+                <p>Price: $959.00</p>
+            </div>
+            <div class="bite">
+                <img src="PRODUCT/PRO (105).jpg" alt="Product 4">
+                <h2>Teeter Totter</h2>
+                <p>An essential balance obstacle for any ninja gym, fully adjustable for challenge levels.</p>
+                <p>Price: $319.00</p>
+            </div>
+            <div class="bite">
+                <img src="PRODUCT/PRO (107).jpg" alt="Product 5">
+                <h2>Pop Up Parkour Package</h2>
+                <p>Quickly assembled for versatile setups, perfect for parkour training.</p>
+                <p>Price: $1,889.00</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="bite-container">
+        <div class="bites">
+            <div class="bite">
+                <img src="PRODUCT/PRO (106).jpg" alt="Product 6">
+                <h2>Balance Beam</h2>
+                <p>Perfect for improving balance and coordination skills.</p>
+                <p>Price: $450.00</p>
+            </div>
+            <div class="bite">
+                <img src="PRODUCT/PRO (109).jpg" alt="Product 7">
+                <h2>Cliff Board</h2>
+                <p>A challenging obstacle for advanced ninjas to master their skills.</p>
+                <p>Price: $700.00</p>
+            </div>
+            <div class="bite">
+                <img src="PRODUCT/PRO (110).jpg" alt="Product 8">
+                <h2>Rope Swing</h2>
+                <p>Add excitement to your training with this dynamic obstacle.</p>
+                <p>Price: $1,200.00</p>
+            </div>
+            <div class="bite">
+                <img src="PRODUCT/PRO (104).jpg" alt="Product 9">
+                <h2>Warrior Wall</h2>
+                <p>Test your agility and strength with this vertical challenge.</p>
+                <p>Price: $2,300.00</p>
+            </div>
+            <div class="bite">
+                <img src="PRODUCT/PRO (102).jpg" alt="Product 10">
+                <h2>Adjustable Lache Board</h2>
+                <p>Customize lache distances for tailored training sessions.</p>
+                <p>Price: $149.00</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="button prev" onclick="changeSlide(-1)">❮</button>
+    <button class="button next" onclick="changeSlide(1)">❯</button>
+</div>
+    
+<!-----------------------------------3D DESIGN AND CUSTOMIZATION SECTION---------------------->
+    <div class="dis"> 
+    <div class="pace">  </div>
+    <div class="disign"><div class="arrival"><button>view more</button></div></div>
+
+    </div>    
+<!-----------------------------------3D DESIGN AND CUSTOMIZATION SECTION---------------------->
+    <h1>Featured Products</h1>
+<div>
+    
+    <div class="gemi"> </div>
+    
+</div>
+
+    <div class="container">
+        <div class="product-card" data-category="electronics">
+            <img src="img/p1.jpg" alt="Product 1" class="product-image">
+            <h2 class="product-title">floor-mounted aluminum truss course t</h2>
+            <p class="product-price">$19.99</p>
+          <div class="nutton123"><a href="products.html"><button class="homeproductsbutton">view more</button></a></div> 
+        </div>
+        <div class="product-card" data-category="clothing">
+            <img src="img/p2.jpg" alt="Product 2" class="product-image">
+            <h2 class="product-title">truss course frame</h2>
+            <p class="product-price">$29.99</p>
+            <div class="nutton123"><a href="products.html"> <button class="homeproductsbutton">view more</button></a></div> 
+        </div>
+        <div class="product-card" data-category="home">
+            <img src="img/p3.jpg" alt="Product 3" class="product-image">
+            <h2 class="product-title">Hanging Obstacle Course</h2>
+            <p class="product-price">$39.99</p>
+            <div class="nutton123"><a href="products.html"> <button class="homeproductsbutton">view more</button></a></div> 
+        </div>
+        <div class="product-card" data-category="toys">
+            <img src="img/p4.jpg" alt="Product 4" class="product-image">
+            <h2 class="product-title">Half-ring flywheel</h2>
+            <p class="product-price">$49.99</p>
+            <button class="homeproductsbutton">view more</button>
+        </div>
+        <div class="product-card" data-category="electronics">
+            <img src="img/p5.jpg" alt="Product 5" class="product-image">
+            <h2 class="product-title">Climbing net</h2>
+            <p class="product-price">$59.99</p>
+            <button class="homeproductsbutton">view more</button>
+        </div>
+        <div class="product-card" data-category="clothing">
+            <img src="img/p6.jpg" alt="Product 6" class="product-image">
+            <h2 class="product-title">Cheese Board </h2>
+            <p class="product-price">$69.99</p>
+            <button class="homeproductsbutton">view more</button>
+        </div>
+        <div class="product-card" data-category="home">
+            <img src="img/p7.jpg" alt="Product 7" class="product-image">
+            <h2 class="product-title">Maze climbing B</h2>
+            <p class="product-price">$79.99</p>
+            <button class="homeproductsbutton">view more</button>
+        </div>
+        <div class="product-card" data-category="toys">
+            <img src="img/p8.jpg" alt="Product 8" class="product-image">
+            <h2 class="product-title">Maze climbing B PE Board </h2>
+            <p class="product-price">$89.99</p>
+            <button class="homeproductsbutton">view more</button>
+        </div>
+        <div class="product-card" data-category="electronics">
+            <img src="img/p9.jpg" alt="Product 9" class="product-image">
+            <h2 class="product-title">Aerial Fitness Packages</h2>
+            <p class="product-price">$99.99</p>
+            <button class="homeproductsbutton">view more</button>
+        </div>
+        <div class="product-card" data-category="clothing">
+            <img src="img/p10.jpg" alt="Product 10" class="product-image">
+            <h2 class="product-title">Custom Track package</h2>
+            <p class="product-price">$109.99</p>
+            <button class="homeproductsbutton">view more</button>
+        </div>
+        <div class="product-card" data-category="home">
+            <img src="img/p11.jpg" alt="Product 11" class="product-image">
+            <h2 class="product-title">Trapezoidal block</h2>
+            <p class="product-price">$119.99</p>
+            <button class="homeproductsbutton">view more</button>
+        </div>
+        <div class="product-card" data-category="toys">
+            <img src="img/p13.jpg" alt="Product 12" class="product-image">
+            <h2 class="product-title">3-Track Package(8 Types of products 21 sets of obstacles)</h2>
+            <p class="product-price">$129.99</p>
+             <button class="homeproductsbutton">view more</button>
+        </div>
+        <div class="product-card" data-category="electronics">
+            <img src="img/p14.jpg" alt="Product 13" class="product-image">
+            <h2 class="product-title">Cross-Wing ,Imported Plywood</h2>
+            <p class="product-price">$139.99</p>
+            <button class="homeproductsbutton">view more</button>
+        </div>
+        <div class="product-card" data-category="clothing">
+            <img src="img/p16.jpg" alt="Product 14" class="product-image">
+            <h2 class="product-title"> eco-friendly adult course 2-Track package16 sets of obstacles</h2>
+            <p class="product-price">$149.99</p>
+            <button class="homeproductsbutton">view more</button>
+        </div>
+        <div class="product-card" data-category="home">
+            <img src="img/p15.jpg" alt="Product 15" class="product-image">
+            <h2 class="product-title">Ground protection Ninja gym mats</h2>
+            <p class="product-price">$159.99</p>
+            <button class="homeproductsbutton">view more</button>
+        </div>
+    </div>
+
+    <div class="navigation">
+       <a href="home.html"><button class="nav-button"><img src="img/left.png"></button></a> 
+        <a href="home.html"><button class="nav-button"><img src="img/left-chevron.png"></button></a>
+    </div>
+
+    
+    <!-------------------products list----------------------->
+    
+    
+    <div class="introduction">
+        <h2>Brief Introduction</h2>
+        <div class="describ">
+       
+        <div class="morer">
+            <div class="mores">          
+            <div class="more"><img src="img/comp1.JPG" alt="Photo 1"></div>
+            <div class="more"><img src="img/comp2 (1).JPG" alt="Photo 2"></div>
+            <div class="more"><img src="img/comp2 (2).JPG" alt="Photo 3"></div>
+            <div class="more"><img src="img/comp2 (4).jpg" alt="Photo 4"></div>
+            <div class="more"><img src="img/comp2 (5).jpg" alt="Photo 5"></div>
+            <div class="more"><img src="img/comp2 (6).jpg" alt="Photo 6"></div>
+            </div> 
+        </div>
+               <div class="intro">
+                <h4>Xian Ninja Equipment Factory Co., Ltd</h4>
+                <p>Welcome to our company, a leading provider of high-quality fitness equipment based in Xi'an City, China. Since our establishment in 2005, we have dedicated ourselves to delivering innovative and reliable products that meet the diverse needs of fitness enthusiasts around the globe. Our state-of-the-art factory is equipped with advanced technology and skilled professionals, allowing us to produce a wide range of fitness equipment tailored for both commercial and home use.</p>
+                <p>With a commitment to quality and customer satisfaction, we have built a loyal clientele worldwide, earning a reputation for excellence in the fitness industry. 
+                
+                <div><a href="about.html"><button>view more</button></a></div>
+                
+            </div>
+        </div>
+    </div>
+    
+  <!----------------------------new arrival section---------------------------->  
+    
+    <div class="sis"> 
+    <div class="sace">  New Products </div>
+    <div class="sisign"><div class="arrival"><button><a href="products.html"> view more</a></button></div></div>
+
+    </div>   
+
+
+<!------------------------------------------------------------------>
+<div class="sparrow-slider">
+    <!-- Slide 1 -->
+    <div class="finch-wrapper active-finch">
+        <div class="eagle-slides">
+            <div class="owl-slide">
+                <img src="PRODUCT/PRO (129).jpg" alt="Product 1">
+                <h2>Beijing|Beijing International Youth Training Center</h2>
+                <p>Perfect Installation .</p>
+                <p>Beijing international youth Center</p>
+            </div>
+            <div class="owl-slide">
+                <img src="PRODUCT/PRO (132).jpg" alt="Product 2">
+                <h2>Beijing|Beijing Shudongming Sports Technology co.,Ltd</h2>
+                <p>Beijing Shudongming Sports Technology Co., Ltd. 
+                    delivers innovative solutions for athletic excellence.</p>
+                
+            </div>
+            <div class="owl-slide">
+                <img src="PRODUCT/PRO (131).jpg" alt="Product 3">
+                <h2>Shandong Zibo |Physical Fitness Comprehensive Training hall.</h2>
+                <p>Physical Fitness Comprehensive Training hall. 
+                    delivers innovative solutions for athletic excellence.</p>
+            </div>
+            <div class="owl-slide">
+                <img src="PRODUCT/PRO (130).jpg" alt="Product 4">
+                <h2>Xi'an|Light Extream Comprensive Fitness Center</h2>
+                <p>Xi'an|Light Extream Comprensive Fitness Center. 
+                    delivers innovative solutions for athletic excellence.</p>
+            </div>
+            <div class="owl-slide">
+                <img src="PRODUCT/PRO (134).jpg" alt="Product 5">
+                <h2>Shenzhen | Yanding Sports Shenzhen Juniors Comprensive fitness</h2>
+                <p>Yanding Sports Shenzhen Juniors Comprensive fitness. 
+                    delivers innovative solutions for athletic excellence.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="finch-wrapper">
+        <div class="eagle-slides">
+            <div class="owl-slide">
+                <img src="PRODUCT/PRO (133).jpg" alt="Product 6">
+                <h2>Beijing|Beijing International Youth Training Center</h2>
+                <p>Perfect Installation .</p>
+                <p>Beijing international youth Center</p>
+            </div>
+            <div class="owl-slide">
+                <img src="PRODUCT/PRO (137).jpg" alt="Product 7">
+                <h2>Cliff Board</h2>
+                <p>A challenging obstacle for advanced ninjas to master their skills.</p>
+                <p>Price: $700.00</p>
+            </div>
+            <div class="owl-slide">
+                <img src="PRODUCT/PRO (138).jpg" alt="Product 8">
+                <h2>Rope Swing</h2>
+                <p>Add excitement to your training with this dynamic obstacle.</p>
+                <p>Price: $1,200.00</p>
+            </div>
+            <div class="owl-slide">
+                <img src="PRODUCT/PRO (138).jpg" alt="Product 8">
+                <h2>Rope Swing</h2>
+                <p>Add excitement to your training with this dynamic obstacle.</p>
+                <p>Price: $1,200.00</p>
+            </div>
+            <div class="owl-slide">
+                <img src="PRODUCT/PRO (140).jpg" alt="Product 10">
+                <h2>Adjustable Lache Board</h2>
+                <p>Customize lache distances for tailored training sessions.</p>
+                <p>Price: $149.00</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="nav-bird prev-bird" onclick="navigateBird(-1)">❮</button>
+    <button class="nav-bird next-bird" onclick="navigateBird(1)">❯</button>
+</div>
+
+
+
+
+
+
+<!--------------------customer trust section---------------------->
+    <div class="choose">
+        <h2 class="introduction">Why Choose Us</h2>
+        <div class="class33">
+            <img src="img/24.PNG" alt="24/7 Support">
+            <h2>24/7 Available</h2>
+            <p>We provide 24/7 support, delivering innovative solutions tailored to your needs. Our dedicated team ensures reliability, efficiency, and exceptional service for all your business requirements.</p>
+        </div>
+        <div class="class33">
+            <img src="img/customer.PNG" alt="Customer Feedback">
+            <h2>Customer Feedback</h2>
+            <p>Our customers rave about our exceptional service and innovative solutions. We prioritize their needs, ensuring satisfaction and building lasting relationships through trust and reliability.</p>
+        </div>
+        <div class="class33">
+            <img src="img/maint.PNG">
+            <h2>Maintenance</h2>
+            <p>Our maintenance services ensure optimal performance and longevity. We provide comprehensive instruction guides, empowering you to easily manage and care for your equipment effectively.</p>
+        </div>
+    </div>
+<div class="Joinmail"><h7>Join our mailing list</h7>
+      <p>Bethe first to know about New arrivals sales</p>
+                 <p>exclusive offers,and special events</p>
+    
+    
+    <form><input type="email" placeholder="Enter your email"required></form><button>subscribe</button>
+    
+    </div>
+    
+    
+    <div class="footer">
+        <div class="ft">
+            <h2>Menu</h2>
+            <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+             <li><a href="catalog.html">catalog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="ft">
+            <h2>Contact Us</h2>
+            <p>Email: info@ninjabase.com</p>
+            <p>Tell: +8619870035632</p>
+            <p>WhatsApp: +8619870035632</p>
+            <p>WeChat: +8619870035632</p>
+            <p>Address: 12th Changan Road, Yanta Dist., Xi'an, China</p>
+        </div>
+        <div class="ft">
+            <div class="message">
+                <h2>Leave a Message</h2>
+                <form action="https://formsubmit.co/habinezaandrew033@gmail.com" method="POST">
+                  <div>   <input class="name" type="text" placeholder="Your Name" required></div>
+                    <div>  <input class="name" type="email" placeholder="Your Email" required></div>
+                    <div>  <textarea class="name" placeholder="Your Message" required></textarea></div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+       
+    </div>
+    <div class="copy">© 2024 UPKU All right reserved.
+
+    </div>
+    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">WhatsApp Us</a>
+    <script>
+        const slides = document.querySelector('.slides');
+        let currentIndex = 0;
+
+        function showSlide(index){
+            const totalSlides = document.querySelectorAll('.slide').length;
+            currentIndex = (index + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        setInterval(() => {
+            showSlide(currentIndex + 1);
+        }, 5000);
+         // Change slide every 3 seconds
+   //products list     
+      
+        //products list  
+        
+         const languageOptions = document.querySelector('.language-options');
+languageOptions.addEventListener('click', (event) => {
+  if (event.target.tagName === 'LI') {
+    const selectedLanguage = event.target.querySelector('span').textContent;
+    // Implement language change logic here, e.g., using localStorage or sessionStorage
+    console.log('Selected language:', selectedLanguage);
+  }
+});
+
+// search function
+const toggleSearch = (search, button) =>{
+   const searchBar = document.getElementById(search),
+         searchButton = document.getElementById(button)
+
+   searchButton.addEventListener('click', () =>{
+       // We add the show-search class, so that the search bar expands
+       searchBar.classList.toggle('show-search')
+   })
+}
+toggleSearch('search-bar', 'search-button');
+
+//slide for feautured products--------------------------------------------------
+
+
+    const slideContainers = document.querySelectorAll('.bite-container');
+
+    function showSlides() {
+        slideContainers.forEach((container, index) => {
+            container.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function changeSlide(direction) {
+        currentIndex = (currentIndex + direction + slideContainers.length) % slideContainers.length; // Loop through slides
+        showSlides();
+    }
+
+    showSlides(); // Initialize the slider
+
+    let currentBirdIndex = 0;
+    const finchWrappers = document.querySelectorAll('.finch-wrapper');
+
+    function showBirdSlides() {
+        finchWrappers.forEach((wrapper, index) => {
+            wrapper.classList.toggle('active-finch', index === currentBirdIndex);
+        });
+    }
+
+    function navigateBird(direction) {
+        currentBirdIndex = (currentBirdIndex + direction + finchWrappers.length) % finchWrappers.length; // Loop through slides
+        showBirdSlides();
+    }
+
+    showBirdSlides(); // Initialize the slider
+
+</script>
+
+   
+</body>
+</html>

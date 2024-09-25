@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.search-container {
+    margin: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+}
+
+.products {
+    display: flex;
+    gap: 20px;
+}
+
+.product {
+    position: relative;
+}
+
+.product img {
+    width: 100px;
+}
+
+.info {
+    display: none; /* Hide product info by default */
+}
+
+.product:hover .info {
+    display: block; /* Show info on hover */
+}
+
+.hover-info {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none; /* Hide by default */
+    z-index: 10;
+}
